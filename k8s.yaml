@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-test
+  name: jenkins-test2
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: jenkins-test
+      app: jenkins-test2
   template:
     metadata:
       labels:
-        app: jenkins-test
+        app: jenkins-test2
     spec:
       containers:
       - image: swr.na-mexico-1.myhuaweicloud.com/test-swr/jenkins-test2:<BUILD_TAG>
@@ -19,7 +19,7 @@ spec:
           - sleep
         args:
           - '1000'
-        name: jenkins-test
+        name: jenkins-test2
         env:
         - name: branch
       imagePullSecrets:
